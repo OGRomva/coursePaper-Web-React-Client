@@ -1,0 +1,13 @@
+.header {
+  min-width: 100%;
+  background-color: darkgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.header-username-p {
+  display: flex;
+}
+
+/*# sourceMappingURL=Header.module.css.map */

@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useContext, useEffect } from 'react';
 import './App.css';
+import Layout from './Components/Layout/Layout';
+import Authorization from './Components/Authorization/Authorization';
+import { Context } from './index';
+import { observer } from 'mobx-react-lite';
+import Repositories from './Components/Repositories/Repositories';
+import { Route, Routes } from 'react-router-dom';
+import { RouteNames, routes } from './router';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const {store} = useContext(Context)
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            store.checkAuth()
+        }
+    }, [])
+
+    if (!store.isAuth) {
+        return <div className="App">
+            <Layout>
+                <Authorization />
+            </Layout>
+        </div>;
+    }
+
+    return (
+        <div className="App">
+            <Layout>
+                <Routes>
+                    <Route path={RouteNames.AUTH} element={<Authorization/>}/>
+                    <Route path={RouteNames.REPOS} element={<Repositories/>}/>
+                </Routes>
+            </Layout>
+        </div>
+    );
 }
 
-export default App;
+export default observer(App);

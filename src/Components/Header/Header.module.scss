@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  background-color: darkgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+.header-username-p {
+  margin: 10px 10px 10px 10px;
+}
+
+.btnWrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+
+}
