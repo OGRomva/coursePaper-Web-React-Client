@@ -1,0 +1,41 @@
+.filePage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.filePageTitle {
+  width: 95%;
+  background-color: var(--color-main);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.h2 {
+  margin-left: 3%;
+}
+
+.hr {
+  background-color: white;
+  width: 90%;
+}
+
+.textAreaContainer {
+  margin-top: 3%;
+  background-color: var(--color-main);
+  border-radius: 30px;
+  height: 80%;
+  width: 95%;
+}
+
+.textArea {
+  margin: 3%;
+  width: 94%;
+  height: 90%;
+  resize: none;
+  color: white;
+}

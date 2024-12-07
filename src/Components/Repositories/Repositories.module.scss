@@ -1,3 +1,35 @@
 .repos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+}
 
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: dimgray;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 30px;
+}
+
+.reposList {
+  border-radius: 30px;
+  margin-top: 20px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: dimgray;
+  height: auto;
+}
+
+.createRepBtn {
+  margin-top: 1%;
+  margin-bottom: 1%;
 }

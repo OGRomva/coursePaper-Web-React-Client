@@ -12,19 +12,16 @@ const Header: FC<IHeaderProps> = () => {
     const {store} = useContext(Context)
     const username = store.user.username;
 
-    const location = useLocation();
     const navigate = useNavigate();
 
-    useEffect(() => {
-            console.log(`currents page location is ${location}`);
-        }, [location])
 
     if (store.isAuth) {
         return <header className={styles.header}>
-            <p className={styles.headerUsernameP}> Добро пожаловать {username} </p>
+            <h2 className={styles.headerUsernameP}> Добро пожаловать {username} </h2>
             <div className={styles.btnWrapper}>
                 <button className={styles.button} onClick={() => {
-                    navigate(RouteNames.REPOS, {replace: true})
+                    store.findAllRepos();
+                    navigate(RouteNames.REPOSLIST, {replace: true})
                 }}> Репозитории</button>
                 <button className={styles.button} onClick={() => store.logout()}> Выйти </button>
             </div>

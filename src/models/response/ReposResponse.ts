@@ -1,7 +1,7 @@
 import { IBranches } from '../IBranches';
 
 export interface ReposResponse {
-    rep_id: number;
+    repos_id: number;
     title: string;
     owner_id: number;
     branches: IBranches[]

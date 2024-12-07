@@ -1,0 +1,28 @@
+.reposListItem {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #8c8a8a;
+  margin-bottom: 5px;
+  border-radius: 15px;
+}
+
+.wrapper {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+
+}
+
+.btnWrap {
+  gap: 5%
+}
+
+.br {
+  width: 95%;
+}

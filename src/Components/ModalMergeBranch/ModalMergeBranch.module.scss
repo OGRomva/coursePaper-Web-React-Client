@@ -1,0 +1,71 @@
+.mergeWindow {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mergeTitle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hr {
+  background-color: white;
+  width: 95%;
+}
+
+.comboBoxWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 3%;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+
+.comboBoxElement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.textarea {
+  border-radius: 30px;
+  height: 50%;
+  margin-bottom: 2%;
+  width: 100%;
+}
+
+.labelTextarea {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmWrapper {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5%;
+  align-items: center;
+  gap: 1%;
+}
+
+.mergeBtn {
+  height: 40px;
+  border-radius: 15px;
+}
+
+.comboBox {
+  height: 40px;
+  border-radius: 15px;
+
+}

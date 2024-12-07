@@ -1,0 +1,31 @@
+.modalBackground {
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.interactiveBack {
+  background-color: black;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+
+.modalWindow {
+  margin-top: 20%;
+  position: absolute;
+  display: flex;
+  width: 60%;
+  background-color: dimgray;
+  border-radius: 30px;
+}

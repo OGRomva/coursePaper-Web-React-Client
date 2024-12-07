@@ -2,6 +2,8 @@ import { FC, useContext, useState } from 'react';
 import styles from './Authorization.module.scss';
 import { Context } from '../../index';
 import { observer } from 'mobx-react-lite';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { RouteNames } from '../../router';
 
 interface IAuthorizationProps {
 
@@ -10,6 +12,7 @@ interface IAuthorizationProps {
 const Authorization: FC<IAuthorizationProps> = () => {
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const navigate = useNavigate();
 
     const { store } = useContext(Context);
 
@@ -20,7 +23,9 @@ const Authorization: FC<IAuthorizationProps> = () => {
                 className={styles.input}
                 type="text"
                 placeholder="username"
-                onChange={e => setUsername(e.target.value)}
+                onChange={e => {
+                    setUsername(e.target.value);
+                }}
                 value={username}
             />
 
@@ -36,12 +41,18 @@ const Authorization: FC<IAuthorizationProps> = () => {
         <div className={styles.btnWrapper}>
             <button
                 className={styles.button}
-                onClick={() => store.login(username, password)}>
+                onClick={() => {
+                    store.login(username, password);
+                    navigate(RouteNames.REPOSLIST, {replace: true});
+                }}>
                 Логин
             </button>
             <button
                 className={styles.button}
-                onClick={() => store.registration(username, password)}>
+                onClick={() => {
+                    store.registration(username, password);
+                    navigate(RouteNames.REPOSLIST, {replace: true});
+                }}>
                 Регистрация
             </button>
         </div>

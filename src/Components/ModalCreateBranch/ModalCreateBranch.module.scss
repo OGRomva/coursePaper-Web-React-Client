@@ -1,0 +1,25 @@
+.createBranch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 10%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.titleInput {
+  width: 70%;
+  height: 40px;
+  border-radius: 15px;
+}
+
+.createBtn {
+  width: 25%;
+  border-radius: 15px;
+}

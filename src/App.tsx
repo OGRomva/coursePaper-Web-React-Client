@@ -5,15 +5,24 @@ import Authorization from './Components/Authorization/Authorization';
 import { Context } from './index';
 import { observer } from 'mobx-react-lite';
 import Repositories from './Components/Repositories/Repositories';
-import { Route, Routes } from 'react-router-dom';
-import { RouteNames, routes } from './router';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { RouteNames } from './router';
+import Repos from './Components/Reposiroty/Repos';
+import FilePage from './Components/FilePage/FilePage';
 
 function App() {
 
     const {store} = useContext(Context)
+    const location = useLocation();
+    const navigate = useNavigate(
+
+    );
     useEffect(() => {
         if (localStorage.getItem('token')) {
             store.checkAuth()
+            if (store.isAuth) {
+                navigate(RouteNames.REPOSLIST, {replace: true})
+            }
         }
     }, [])
 
@@ -30,7 +39,9 @@ function App() {
             <Layout>
                 <Routes>
                     <Route path={RouteNames.AUTH} element={<Authorization/>}/>
-                    <Route path={RouteNames.REPOS} element={<Repositories/>}/>
+                    <Route path={RouteNames.REPOSLIST} element={<Repositories/>}/>
+                    <Route path={RouteNames.FILES} element={<Repos/>}/>
+                    <Route path={RouteNames.FILE} element={<FilePage/>}/>
                 </Routes>
             </Layout>
         </div>
